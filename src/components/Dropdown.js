@@ -6,18 +6,17 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux'; //connect react app to redux S1:
 import {getDataSorted} from '../actions/productAction';
 const Dropdown = (props) => {
-  const [age, setAge] = React.useState('');
+  const [options, setOptions] = React.useState('');
 
   const handleChange = (e) => {
-    //sorting Preference
+    setOptions(e.target.value);
 
-    setAge(e.target.value);
-    console.log('this side');
     const Sortingoption = e.target.value;
     let isSorted = false;
-    if (age !== 'price' && age !== 'gender' && age !== 'rating') {
+    if (options !== 'price' && options !== 'gender' && options !== 'rating') {
       isSorted = true;
     }
+
     props.getDataSorted(Sortingoption, isSorted);
   };
 
@@ -27,7 +26,7 @@ const Dropdown = (props) => {
         sx={{m: 1, minWidth: 120}}
         style={{float: 'right', display: 'block'}}
       >
-        <Select value={age} onChange={handleChange} displayEmpty>
+        <Select value={options} onChange={handleChange} displayEmpty>
           <MenuItem value=''>
             <span>
               Sort by :<span style={{fontWeight: '700'}}> Recommended</span>{' '}

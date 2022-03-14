@@ -9,6 +9,7 @@ import Filter from './Filter';
 import Dropdown from './Dropdown';
 import {Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core';
+//... styling Material UI elements
 const useStyles = makeStyles({
   filters: {
     marginTop: '1rem',
@@ -25,12 +26,17 @@ const useStyles = makeStyles({
     alignSelf: 'flex-end',
   },
 });
+//Function
 const HomePage = (props) => {
-  let prodArray = props.isSorted;
   const classes = useStyles();
+
+  //holding sorted products
+  let prodArray = props.isSorted;
+
   //to rerender compoent on product searched
   const [searchResult, setSearchResult] = useState(false);
-  //to get products
+
+  //to get products on page load
   useEffect(() => {
     //requesting all products
     props.getAllProducts();
@@ -42,6 +48,7 @@ const HomePage = (props) => {
       <Grid container spacing={2} style={{display: 'flex'}}>
         {/* header  & subHeader*/}
         <Grid item xs={12}>
+          {/* passing set state to Header component */}
           <Header setSearchResult={setSearchResult} />
         </Grid>
         {/* FILTERS */}
@@ -59,7 +66,7 @@ const HomePage = (props) => {
         >
           FILTERS
         </Grid>
-        {/* FILTERS TYPE */}
+        {/* UNFUNCTIONAL FILTERS  */}
         <Grid
           xs={3}
           sm={8}
@@ -99,10 +106,10 @@ const HomePage = (props) => {
         </Grid>
         {/* product row */}
 
-        {/* {props.sortedData === [] ? ( */}
         {!props.isSorted && (
           <Fragment>
             <Grid container xs={12} item sm={9} rowSpacing={2}>
+              {/* Ternary expression here */}
               {Object.keys(props.products).map((id, index) => {
                 return (
                   <Grid key={index} item>

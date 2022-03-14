@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux'; //connect react app to redux S1:
+import {connect} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import {viewProduct} from '../actions/productAction';
 import {addToBasket} from '../actions/productAction';
@@ -12,12 +12,13 @@ import Button from '@mui/material/Button';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Delay from 'react-delay';
+//FUNCTION
 const ViewProduct = (props) => {
   const [isLoading, setIsLoading] = useState(true);
+  //accessing id from the URL
   const {id} = useParams();
   const [check, setcheck] = useState(false);
   useEffect(() => {
-    console.log('calling fun');
     props.viewProduct(id).then(() => {
       if (isLoading === true) {
         setIsLoading(false);
@@ -25,7 +26,6 @@ const ViewProduct = (props) => {
     });
   }, []);
   const OnClick = (e) => {
-    console.log('inside on click');
     props.addToBasket(id);
   };
   if (isLoading === false) {

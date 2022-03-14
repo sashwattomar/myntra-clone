@@ -11,8 +11,10 @@ import SearchBar from './SearchBar';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import CartLayout from './CartLayout';
+//Function
 const Header = (props) => {
   const [showCart, setShowCart] = useState(false);
+
   const showCartHandler = () => {
     setShowCart(!showCart);
   };
@@ -70,10 +72,7 @@ const Header = (props) => {
           <div className='header__search'>
             <SearchIcon className='header__searchIcon' color='disabled' />
 
-            <SearchBar
-              className='header__searchInput'
-              // searchResult={props.setSearchResult}
-            />
+            <SearchBar className='header__searchInput' />
           </div>
           {/* 3 links */}
           <div className='header__nav'>
@@ -96,16 +95,12 @@ const Header = (props) => {
               </div>
             </Link>
             {/* bag */}
-            {/* <Link to='/cart' className='header__link'> */}
             <div className='header__option' onClick={() => showCartHandler()}>
               <span className='header_optionLineOne'>
                 <ShoppingBagOutlinedIcon color='disabled' />
               </span>
               <span className='header_optionLineTwo'>{`Bag${props.basket.length}`}</span>
-
-              {/* <span>{props.basket.length}</span> */}
             </div>
-            {/* </Link> */}
           </div>
         </div>
       </nav>

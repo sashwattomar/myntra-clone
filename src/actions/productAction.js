@@ -33,11 +33,11 @@ export const getAllProducts = () => async (dispatch) => {
     });
   }
 };
-export const clearErrors = () => async (dispatch) => {
-  dispatch({
-    type: CLEAR_ERROR,
-  });
-};
+// export const clearErrors = () => async (dispatch) => {
+//   dispatch({
+//     type: CLEAR_ERROR,
+//   });
+// };
 export const searchProduct = (search) => async (dispatch) => {
   console.log('reache');
   fireDb
@@ -197,15 +197,6 @@ export const addToBasket = (id) => async (dispatch) => {
     console.log(err);
   }
 };
-
-// export const load = (val) => async (dispatch) => {
-//   console.log('inload');
-//   console.log(val);
-//   dispatch({
-//     type: LOAD,
-//     payload: val,
-//   });
-// };
 export const removeItem = (id) => async (dispatch) => {
   dispatch({
     type: REMOVE_FROM_CART,

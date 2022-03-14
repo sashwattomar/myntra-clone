@@ -1,14 +1,10 @@
 import {
   ALL_PRODUCT_REQUEST,
   ALL_PRODUCT_SUCESS,
-  ALL_PRODUCT_FAIL,
-  CLEAR_ERROR,
-  // SEARCH_REQUEST,
   SORTED_DATA,
   ADD_TO_CART,
   REMOVE_FROM_CART,
   VIEW,
-  LOAD,
 } from '../actions/types';
 const initialState = {
   loading: true,
@@ -73,13 +69,7 @@ export default function productReducer(state = initialState, action) {
         loading: payload.load,
       };
     }
-    // case LOAD: {
-    //   console.log(payload);
-    //   return {
-    //     ...state,
-    //     loading: payload,
-    //   };
-    // }
+
     default:
       return state;
   }

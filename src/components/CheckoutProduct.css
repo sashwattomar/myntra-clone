@@ -1,0 +1,19 @@
+.checkoutProduct{
+    display: flex;
+}
+.checkoutProduct__image{
+    object-fit:contain;
+    width:13rem;
+    height:20rem;
+}
+.checkoutProduct__info{
+    padding-left:20px;
+}
+.checkoutProduct__title{
+    font-size: 17px;
+    font-weight: 800;
+}
+.checkoutProduct__info >button{
+    background-color: azure;
+    border:1px solid;
+}

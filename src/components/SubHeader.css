@@ -1,0 +1,19 @@
+.subHeaderContainer{
+    background-color:  rgb(255, 255, 255);
+    display: flex;
+    margin-left: 30px;
+}
+.subHeader__options{
+    margin-right: 10px;
+    white-space: nowrap;
+}
+#Shirts_For_Men_Women{
+font-weight: 600;
+color: black;
+}
+.subHeader_optionOne{
+    font-size: large;
+}
+.subHeader_optionTwo{
+    color:grey
+}

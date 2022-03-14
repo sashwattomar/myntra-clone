@@ -1,0 +1,11 @@
+export const ALL_PRODUCT_REQUEST = 'ALL_PRODUCT_REQUEST';
+export const ALL_PRODUCT_SUCESS = 'ALL_PRODUCT_SUCESS';
+export const ALL_PRODUCT_FAIL = 'ALL_PRODUCT_FAIL';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const SEARCH_REQUEST = ' SEARCH_REQUEST';
+export const SORTED_DATA = ' SORTED_DATA';
+export const VIEW = ' VIEW';
+export const ADD_TO_CART = ' ADD_TO_CART';
+export const REMOVE_FROM_CART = ' REMOVE_FROM_CART';
+// export const PRODUCT_ID = ' PRODUCT_ID';
+export const LOAD = ' LOAD';
